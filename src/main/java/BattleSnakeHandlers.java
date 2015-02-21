@@ -18,8 +18,23 @@ public class BattleSnakeHandlers {
     
     public Object handleMove(Map<String, Object> requestBody) {
 		Object gameid = requestBody.get("game_id");
+		Object turn = requestBody.get("turn");
+		String dir;
+		if (turn%4 == 0) {
+			dir = "up";
+		}
+		else if (turn%4 == 1) {
+			dir = "right";
+		}
+		else if (turn%4 == 2) {
+			dir = "down";
+		}
+		else {
+			dir = "left";
+		}
+
         Map<String, Object> responseObject = new HashMap<String, Object>();
-        responseObject.put("move", "up");
+        responseObject.put("move", dir);
         responseObject.put("taunt", requestBody.get("board"));
         return responseObject;
     }
