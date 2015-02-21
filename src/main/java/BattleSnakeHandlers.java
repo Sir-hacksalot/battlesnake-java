@@ -2,7 +2,7 @@
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.*;
 
 public class BattleSnakeHandlers {
     
@@ -34,9 +34,11 @@ public class BattleSnakeHandlers {
 			dir = "left";
 		}
 
+		ArrayList board = requestBosy.get("board");
+	
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", requestBody.get("board").get(0));
+        responseObject.put("taunt", board.get(0));
         return responseObject;
     }
     
