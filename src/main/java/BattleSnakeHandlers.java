@@ -1,13 +1,10 @@
 
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.*;
 
 public class BattleSnakeHandlers {
     
     public Object handleStart(Map<String, Object> requestBody) {
-        // Dummy Response
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("name", "RAID0SNAKE");
         responseObject.put("color", "#00FF00");
@@ -17,7 +14,6 @@ public class BattleSnakeHandlers {
     }
     
     public Object handleMove(Map<String, Object> requestBody) {
-		Object gameid = requestBody.get("game_id");
 		int turn = Integer.parseInt(requestBody.get("turn").toString());
 		String dir;
 
@@ -33,8 +29,6 @@ public class BattleSnakeHandlers {
 		else {
 			dir = "left";
 		}
-
-		ArrayList board = requestBosy.get("board");
 	
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
