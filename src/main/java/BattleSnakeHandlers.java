@@ -15,6 +15,25 @@ public class BattleSnakeHandlers {
     }
     
     public Object handleMove(Map<String, Object> requestBody) {
+		ArrayList rows = (ArrayList) requestBody.get("board");
+		int width = rows.size();
+		ArrayList columns = (ArrayList) rows.get(0);
+		int height = columns.size();
+
+		int ourSnakeX = 0;
+		int ourSnakeY = 0;
+
+		ArrayList snakeList = (ArrayList) requestBody.get("snakes");
+
+		for (int i=0; i<snakeList.size(); i++) {
+			HashMap snake = (HashMap) snakeList.get(i);
+			if ( ((String) snake.get("name")).equals("RAID0SNAKE")) {
+				ourSnakeX = ((ArrayList)((ArrayList) snake.get("coords")).get(0)).get(0);
+				ourSnakeY = ((ArrayList)((ArrayList) snake.get("coords")).get(0)).get(1);
+			}
+		}
+
+
 		int turn = Integer.parseInt(requestBody.get("turn").toString());
 		String dir;
 
@@ -31,10 +50,9 @@ public class BattleSnakeHandlers {
 			dir = "left";
 		}
 	
-		ArrayList rows = (ArrayList) requestBody.get("board");
-		int width = rows.size();
-		ArrayList columns = (ArrayList) rows.get(0);
-		int height = columns.size();
+
+		
+				
 
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
