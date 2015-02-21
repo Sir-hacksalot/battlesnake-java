@@ -18,7 +18,7 @@ public class BattleSnakeHandlers {
     
     public Object handleMove(Map<String, Object> requestBody) {
 		Object gameid = requestBody.get("game_id");
-		Object turn = requestBody.get("turn");
+		int turn = Integer.parseInt(requestBody.get("turn").toString());
 		String dir;
 		if (turn%4 == 0) {
 			dir = "up";
