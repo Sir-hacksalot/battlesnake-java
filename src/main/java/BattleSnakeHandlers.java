@@ -20,6 +20,7 @@ public class BattleSnakeHandlers {
 		Object gameid = requestBody.get("game_id");
 		int turn = Integer.parseInt(requestBody.get("turn").toString());
 		String dir;
+
 		if (turn%4 == 0) {
 			dir = "up";
 		}
@@ -35,7 +36,7 @@ public class BattleSnakeHandlers {
 
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", requestBody.get("board").getClass());
+        responseObject.put("taunt", requestBody.get("board").get(0).getClass());
         return responseObject;
     }
     
