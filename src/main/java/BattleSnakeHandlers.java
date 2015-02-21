@@ -32,7 +32,7 @@ public class BattleSnakeHandlers {
 	
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", board.get(0));
+        responseObject.put("taunt", ConnorSnake.getBoardArray(requestBody);
         return responseObject;
     }
     
