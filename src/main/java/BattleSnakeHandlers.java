@@ -30,7 +30,7 @@ public class BattleSnakeHandlers {
 			if ( ((String) snake.get("name")).equals("RAID0SNAKE")) {
 				ArrayList coords = (ArrayList) snake.get("coords");
 				ArrayList head = (ArrayList) coords.get(0);
-				ourSnakeX = head.get(0);
+				ourSnakeX = Integer.parseInt(head.get(0));
 				ourSnakeY = head.get(1);
 			}
 		}
