@@ -11,7 +11,7 @@ public class BattleSnakeHandlers {
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("name", "RAID0SNAKE");
         responseObject.put("color", "#00FF00");
-        responseObject.put("head_url", "static-cdn.jtvnw.net/emoticons/v1/25/1.0");
+        responseObject.put("head_url", "i.imgur.com/9dHO5Mo.png");
         responseObject.put("taunt", "It's RAIDing time!");
         return responseObject;
     }
