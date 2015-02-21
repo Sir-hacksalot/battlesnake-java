@@ -11,13 +11,12 @@ public class BattleSnakeHandlers {
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("name", "RAID0SNAKE");
         responseObject.put("color", "#00FF00");
-        responseObject.put("head_url", "http://battlesnake-java.herokuapp.com/");
-        responseObject.put("taunt", "battlesnake-java");
+        responseObject.put("head_url", "static-cdn.jtvnw.net/emoticons/v1/25/1.0");
+        responseObject.put("taunt", "It's RAIDing time!");
         return responseObject;
     }
     
     public Object handleMove(Map<String, Object> requestBody) {
-        // Dummy Response
 		Object gameid = requestBody.get("game_id");
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", "up");
