@@ -20,7 +20,7 @@ public class BattleSnakeHandlers {
 		Object gameid = requestBody.get("game_id");
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", "up");
-        responseObject.put("taunt", gameid);
+        responseObject.put("taunt", requestBody.get("board"));
         return responseObject;
     }
     
