@@ -30,9 +30,14 @@ public class BattleSnakeHandlers {
 			dir = "left";
 		}
 	
+		ArrayList rows = (ArrayList) requestBody.get("board")
+		int width = rows.size();
+		ArrayList columns = (ArrayList) rows.get(0);
+		int height = columns.size();
+
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", ConnorSnake.getBoardArray(requestBody));
+        responseObject.put("taunt", "" + width + "," + "height");
         return responseObject;
     }
     
