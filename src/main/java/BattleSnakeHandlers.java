@@ -9,8 +9,8 @@ public class BattleSnakeHandlers {
     public Object handleStart(Map<String, Object> requestBody) {
         // Dummy Response
         Map<String, Object> responseObject = new HashMap<String, Object>();
-        responseObject.put("name", "battlesnake-java");
-        responseObject.put("color", "#ff0000");
+        responseObject.put("name", "RAID0SNAKE");
+        responseObject.put("color", "#ffffff; opacity: 0.5");
         responseObject.put("head_url", "http://battlesnake-java.herokuapp.com/");
         responseObject.put("taunt", "battlesnake-java");
         return responseObject;
@@ -19,8 +19,8 @@ public class BattleSnakeHandlers {
     public Object handleMove(Map<String, Object> requestBody) {
         // Dummy Response
         Map<String, Object> responseObject = new HashMap<String, Object>();
-        responseObject.put("move", "down");
-        responseObject.put("taunt", "going down!");
+        responseObject.put("move", "up");
+        responseObject.put("taunt", "going up...");
         return responseObject;
     }
     
