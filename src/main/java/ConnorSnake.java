@@ -6,7 +6,7 @@ public class ConnorSnake {
 
 	static public String getBoardArray (Map <String, Object> requestBody) {
 		ArrayList list = (ArrayList) requestBody.get("board");
-		return list.get(0).getClass().get(0).toString();
+		return "";//list.get(0).getClass().get(0).toString();
 	}
 
 }
