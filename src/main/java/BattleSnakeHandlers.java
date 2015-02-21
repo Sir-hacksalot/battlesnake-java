@@ -18,7 +18,7 @@ public class BattleSnakeHandlers {
     
     public Object handleMove(Map<String, Object> requestBody) {
         // Dummy Response
-		String gameid = requestBody.get("game_id");
+		Object gameid = requestBody.get("game_id");
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", "up");
         responseObject.put("taunt", gameid);
