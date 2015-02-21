@@ -58,7 +58,7 @@ public class BattleSnakeHandlers {
 
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", "" + width + "," + height);
+        responseObject.put("taunt", "" + ourSnakeX + "," + ourSnakeY);
         return responseObject;
     }
     
