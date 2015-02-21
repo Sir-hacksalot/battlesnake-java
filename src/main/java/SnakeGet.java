@@ -3,19 +3,32 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
 
-public class BattleSnakeHandlers {
-    
-    public Object handleStart(Map<String, Object> requestBody) {
-        Map<String, Object> responseObject = new HashMap<String, Object>();
-        responseObject.put("name", "RAID0SNAKE");
-        responseObject.put("color", "#00FF00");
-        responseObject.put("head_url", "i.imgur.com/9dHO5Mo.png");
-        responseObject.put("taunt", "It's RAIDing time!");
-        return responseObject;
-    }
-    
-    public Object handleMove(Map<String, Object> requestBody) {
-		SnakeGet snakeInfo = new SnakeGet(requestBody);
+public class SnakeGet {
+
+
+		ArrayList rows = (ArrayList) requestBody.get("board");
+		int width = rows.size();
+		ArrayList columns = (ArrayList) rows.get(0);
+		int height = columns.size();
+
+		int ourSnakeX = 0;
+		int ourSnakeY = 0;
+
+		ArrayList snakeList = (ArrayList) requestBody.get("snakes");
+
+		for (int i=0; i<snakeList.size(); i++) {
+			HashMap snake = (HashMap) snakeList.get(i);
+			if ( ((String) snake.get("name")).equals("RAID0SNAKE")) {
+				ArrayList coords = (ArrayList) snake.get("coords");
+				ArrayList head = (ArrayList) coords.get(0);
+				ourSnakeX = ((Integer) head.get(0)).intValue();
+				ourSnakeY = ((Integer) head.get(1)).intValue();
+			}
+		}
+
+		String dir;
+
+		
 
 		int turn = Integer.parseInt(requestBody.get("turn").toString());
 		String dir;
