@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class ConnorSnake {
 
 	static public String getBoardArray (Map <String, Object> requestBody) {
-		return requestBody.get("board").toString();
+		ArrayList list = (ArrayList) requestBody.get("board");
+		return list.get(0).toString();
 	}
 
 }
