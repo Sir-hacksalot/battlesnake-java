@@ -28,8 +28,10 @@ public class BattleSnakeHandlers {
 		for (int i=0; i<snakeList.size(); i++) {
 			HashMap snake = (HashMap) snakeList.get(i);
 			if ( ((String) snake.get("name")).equals("RAID0SNAKE")) {
-				ourSnakeX = ((ArrayList)((ArrayList) snake.get("coords")).get(0)).get(0);
-				ourSnakeY = ((ArrayList)((ArrayList) snake.get("coords")).get(0)).get(1);
+				ArrayList coords = (ArrayList) snake.get("coords");
+				ArrayList head = (ArrayList) coords.get(0);
+				ourSnakeX = head.get(0);
+				ourSnakeY = head.get(1);
 			}
 		}
 
