@@ -36,7 +36,7 @@ public class BattleSnakeHandlers {
 
         Map<String, Object> responseObject = new HashMap<String, Object>();
         responseObject.put("move", dir);
-        responseObject.put("taunt", requestBody.get("board").get(0).getClass());
+        responseObject.put("taunt", requestBody.get("board").get(0);
         return responseObject;
     }
     
