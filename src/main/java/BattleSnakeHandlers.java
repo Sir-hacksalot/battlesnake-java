@@ -30,7 +30,7 @@ public class BattleSnakeHandlers {
 			dir = "left";
 		}
 	
-		ArrayList rows = (ArrayList) requestBody.get("board")
+		ArrayList rows = (ArrayList) requestBody.get("board");
 		int width = rows.size();
 		ArrayList columns = (ArrayList) rows.get(0);
 		int height = columns.size();
